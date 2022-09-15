@@ -1,6 +1,7 @@
 window.onload = function () {
   getToDoStorage("#todo", "unComplete", toDoList);
   getToDoStorage("#completed", "completed", completedList);
+  styleCompleted();
 };
 
 let toDoList = [];
@@ -70,9 +71,15 @@ window.completeClick = (idclick) => {
   renderList("#completed", completedList);
   saveToDoStorage(completedList, "completed");
   // delCompleted(idclick);
-  
+  styleCompleted()
+};
+
+function styleCompleted() {
   let myNodelist = document.querySelectorAll('#completed li button:nth-child(2)');
+  if(myNodelist.length == 0){
+    return;
+  }
   for (let i = 0; i < myNodelist.length; i++) {
     myNodelist[i].className = 'complete';
   }
-};
+}
