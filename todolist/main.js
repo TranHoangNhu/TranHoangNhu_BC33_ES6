@@ -70,6 +70,7 @@ window.completeClick = (idclick) => {
   renderList("#completed", completedList);
   saveToDoStorage(completedList, "completed");
   // delCompleted(idclick);
+  
   let myNodelist = document.querySelectorAll('#completed li button:nth-child(2)');
   for (let i = 0; i < myNodelist.length; i++) {
     myNodelist[i].className = 'complete';
